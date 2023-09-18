@@ -3,3 +3,53 @@
 body {
   font-family: "Outfit", sans-serif;
 }
+.container {
+  background-image: url("../assets/img/bg.jpg");
+  background-size: cover;
+  height: 1000px;
+
+}
+#logo {
+ width: 20%;
+ padding-top: 60px;
+ padding-left: 170px;
+}
+h1 {
+  text-align: center;
+  color: white;
+  
+  
+}
+#span-h1 {
+  font-size: 70px;
+  font-weight: 600;
+  
+  
+}
+p {
+  color: white;
+  text-align: center;
+}
+#span-p {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+#rateus {
+ display: block;
+ margin: 0 auto;
+ width: 100px;
+ margin-top: 520px;
+ 
+}
+button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 85px;
+  padding-right: 85px;
+  color: white;
+  background-color:transparent ;
+  border-color: white;
+  
+
+}
