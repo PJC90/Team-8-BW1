@@ -2,4 +2,23 @@
 
 body {
   font-family: "Outfit", sans-serif;
+  /* background-image:url(img/bg.jpg) ;
+  text-align: center; */
+  
+ 
+  
+}
+#logo{
+  width: 200px;
+  padding: 60px;
+  padding-left: 150px;
+}
+main h1{
+  color: white;
+  font-weight:400;
+  font-size: 5em;
+  padding-left: 150px;
+}
+main h1 span{
+  font-weight: bold;
 }
