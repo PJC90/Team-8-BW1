@@ -65,18 +65,29 @@ body {
 }
 
 #countdown {
-  display: inline-block;
   float: right;
   margin-right: 180px;
   color: white;
   margin-top: 90px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 15px solid #98689c;
+  padding: 10px;
+  text-align: center;
+  line-height: 100px;
+  transition: border-color 1s ease;
+  overflow: hidden;
+}
+
+br {
+  line-height: 1;
 }
 
 #countdown span {
   font-size: 2em;
 
   line-height: 0;
-  padding-left: 16px;
   padding-left: 4px;
 }
 
@@ -84,4 +95,10 @@ body {
   margin: 0;
   line-height: 1;
   font-size: 0.6em;
+}
+
+#countdown:nth-child(2) {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
 }

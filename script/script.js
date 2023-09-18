@@ -145,6 +145,8 @@ const answerChecking = function (chosenOption) {
 };
 
 const countdown = function () {
+  const countdownElement = document.getElementById("countdown");
+  countdownElement.classList.add("active");
   let timeLeft = 60;
   let timer = setInterval(function () {
     if (timeLeft <= 0) {
