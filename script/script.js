@@ -95,8 +95,9 @@ const questions = [
 ];
 
 const quizSection = document.getElementById("question-section");
-const quizForm = document.getElementById("quiz-form");
-const questionText = document.getElementById("question");
+const quizElement = document.getElementById("question");
+const buttonsContainer = document.getElementById("options");
+
 const questionCounter = document.getElementById("question-counter");
 
 let currentIndex = 0;
@@ -104,39 +105,57 @@ let score = 0;
 
 const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
-  questionText.textContent = actualQuestion.question;
-  quizForm.innerHTML = "";
+  buttonsContainer.textContent = actualQuestion.question;
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
-    actualQuestion.incorrect_answers.sort(() => Math.random() - 0.5);
-    actualQuestion.incorrect_answers.forEach((opt, i) => {
-      const addLabel = document.createElement("label");
-      const optionsInput = document.createElement("input");
-
-      addLabel.type = "radio";
-      optionsInput.type = "answer";
-      addLabel.value = opt;
-      addLabel.appendChild(optionsInput);
-      addLabel.appendChild(document.createTextNode(opt));
-      quizForm.appendChild(addLabel);
+    actualQuestion.incorrect_answers.forEach((opt) => {
+      const buttons = document.createElement("button");
+      buttons.textContent = opt;
+      buttons.addEventListener("click", () => answerChecking(opt));
+      buttonsContainer.appendChild(buttons);
     });
   } else if (actualQuestion.type === "boolean") {
-    const trueLab = document.createElement("label");
-    const trueInput = document.createElement("input");
-    trueInput.type = "radio";
-    trueInput.name = "answer";
-    trueInput.value = "True";
-    trueLab.appendChild(document.createTextNode("True"));
-    quizForm.appendChild(trueLab);
+    const buttonTrue = document.createElement("button");
+    buttonTrue.textContent = "True";
+    buttonTrue.addEventListener("click", () => answerChecking("True"));
+    buttonsContainer.appendChild(buttonTrue);
 
-    const falseLab = document.createElement("label");
-    const falseInput = document.createElement("input");
-    falseInput.type = "radio";
-    falseInput.name = "answer";
-    falseInput.value = "False";
-    falseLab.appendChild(falseInput);
-    falseLab.appendChild(document.createTextNode("False"));
-    quizForm.appendChild(falseLab);
+    const buttonFalse = document.createElement("button");
+    buttonFalse.textContent = "False";
+    buttonFalse.addEventListener("click", () => answerChecking("False"));
+    buttonsContainer.appendChild(buttonFalse);
   }
 };
+const counter = document.getElementById("question-counter");
+counter.textContent = 1;
+
+const answerChecking = function (chosenOption) {
+  const actualQuestion = questions[currentIndex];
+  if (chosenOption === actualQuestion.correct_answer) {
+    score++;
+  }
+  currentIndex++;
+  counter.textContent = currentIndex + 1;
+  if (currentIndex < questions.length) {
+    getQuestion();
+  } else {
+    showResult();
+  }
+};
+
+const countdown = function () {
+  let timeLeft = 60;
+  let timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+    } else {
+      document.getElementById("seconds").innerText = timeLeft;
+    }
+    timeLeft -= 1;
+  }, 1000);
+};
+
+countdown();
+
+getQuestion();
