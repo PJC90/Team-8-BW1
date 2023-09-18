@@ -2,4 +2,29 @@
 
 body {
   font-family: "Outfit", sans-serif;
+  background-color: black;
+}
+
+.container{
+  background-image:url(img/bg.jpg) ;
+  background-size: contain;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 70px;
+}
+#logo{
+  width: 180px;
+  padding-left: 550px;
+  padding-top: 50px;
+}
+
+main h1{
+  color: white;
+  font-weight:400;
+  font-size: 5em;
+  padding-left: 550px;
+}
+main h1 span{
+  font-weight: bold;
 }
