@@ -16,7 +16,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     correct_answer: "Final",
     incorrect_answers: ["Static", "Private", "Public"],
   },
@@ -94,10 +94,23 @@ const questions = [
   },
 ];
 
+const countdown = function () {
+  let timeLeft = 60;
+  let timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+    } else {
+      document.getElementById("seconds").innerHTML = timeLeft;
+    }
+    timeLeft -= 1;
+  }, 1000);
+};
+
+countdown();
+
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
-const buttonsContainer = document.getElementById("options");
-
+const buttonsContainer = document.getElementById("buttonsContainer");
 const questionCounter = document.getElementById("question-counter");
 
 let currentIndex = 0;
@@ -105,7 +118,8 @@ let score = 0;
 
 const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
-  buttonsContainer.textContent = actualQuestion.question;
+  quizElement.textContent = actualQuestion.question;
+  buttonsContainer.innerHTML = "";
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
@@ -143,21 +157,5 @@ const answerChecking = function (chosenOption) {
     showResult();
   }
 };
-
-const countdown = function () {
-  const countdownElement = document.getElementById("countdown");
-  countdownElement.classList.add("active");
-  let timeLeft = 60;
-  let timer = setInterval(function () {
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-    } else {
-      document.getElementById("seconds").innerText = timeLeft;
-    }
-    timeLeft -= 1;
-  }, 1000);
-};
-
-countdown();
 
 getQuestion();
