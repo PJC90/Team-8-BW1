@@ -167,30 +167,3 @@ const showResult = function () {
 };
 
 // PARTE RISULTATI
-
-var data = {
-  labels: ["Risposte Giuste", "Risposte Sbagliate"],
-  datasets: [
-    {
-      data: [7, 3], // Cambia questi valori con le tue percentuali effettive
-      backgroundColor: ["green", "red"],
-    },
-  ],
-};
-
-var ctx = document.getElementById("myDonutChart").getContext("2d");
-
-var myDonutChart = new Chart(ctx, {
-  type: "doughnut",
-  data: data,
-  options: {
-    responsive: true,
-    legend: {
-      position: "bottom",
-    },
-    title: {
-      display: true,
-      text: "Percentuale di Risposte Giuste su 10 Domande",
-    },
-  },
-});
