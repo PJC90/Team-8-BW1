@@ -94,13 +94,37 @@ const questions = [
   },
 ]
 
-const procedi = document.getElementById('proceed')
-const spuntaCheck = document.getElementById('check')
+// const procedi = document.getElementById('proceed')
+// const spuntaCheck = document.getElementById('check')
 
-procedi.addEventListener('click', function () {
-  if (spuntaCheck.checked) {
-    window.location.href = 'pagina2.html'
+// procedi.addEventListener('click', function () {
+//   if (spuntaCheck.checked) {
+//     window.location.href = 'pagina2.html'
+//   } else {
+//     alert('You must accept before proceeding')
+//   }
+// })
+
+const accendi = document.querySelectorAll('.star')
+// itera nella nodeList con un for
+for (let i = 0; i < accendi.length; i++) {
+  accendi[i].addEventListener('click', function () {
+    // quando clicchi una stella esegui una funzione con un for che le illumini tutte fino al numero selezionato
+    for (let s = 0; s <= i; s++) {
+      accendi[s].style.mixBlendMode = 'normal'
+    }
+  })
+}
+
+const form = document.querySelector('#inviaForm')
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault()
+  const report = form.querySelector('.box')
+  if (report.value.trim() === '') {
+    // trim() verifica che non è una stringa vuota
+    alert('Devi riempire il campo di testo')
   } else {
-    alert('You must accept before proceeding')
+    form.submit()
   }
 })
