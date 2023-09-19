@@ -32,11 +32,15 @@ margin-top: 10px;
 margin-bottom: 10px;
 }
 
-#image{
+#star{
 display: inline-block;
 margin: 1.5em;
 margin-left: 22em;
 }
+.star{
+mix-blend-mode: darken;
+}
+.star:hover{mix-blend-mode: normal;}
 
 .text2 p{
 color: white;
