@@ -1,15 +1,14 @@
    
-    var data = {
-        labels: ['Risposte Giuste', 'Risposte Sbagliate'],
+    let data = {
         datasets: [{
             data: [7, 3], 
-            backgroundColor: ['green', 'red']
+            backgroundColor: ['#00FFFF', '#C2128D']
         }]
     };
 
-    var ctx = document.getElementById('myDonutChart').getContext('2d');
+    let ctx = document.getElementById('myDonutChart').getContext('2d');
 
-    var myDonutChart = new Chart(ctx, {
+    let myDonutChart = new Chart(ctx, {
         type: 'doughnut',
         data: data,
         options: {
@@ -23,4 +22,3 @@
             },
         },
     });
-
