@@ -15,14 +15,27 @@
         <h1>Results</h1>
         <p>The summary of your Answers:</p>
         <div id="answersDinamic">
-          <div id="correct">aaa</div>
+          <div id="correct-section">
+            <h1 id="correct">Correct</h1>
+            <h1 id="percentageCorrect"></h1>
+            <p id="correct-answers"></p>
+          </div>
           <div id="chart">
             <canvas id="myDonutChart"></canvas>
           </div>
-          <div id="wrong">cccc</div>
+          <div id="wrong-section">
+            <h1 id="wrong">Wrong</h1>
+            <h1 id="percentageWrong"></h1>
+            <p id="wrong-answers"></p>
+          </div>
+        </div>
+        <div>
+          <button id="rate-button">RATE US</button>
         </div>
       </div>
     </main>
+
     <script src="script/script.js"></script>
+    <script src="script/results.js"></script>
   </body>
 </html>

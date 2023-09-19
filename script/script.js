@@ -108,6 +108,8 @@ const countdown = function () {
   }, 1000);
 };
 
+countdown();
+
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
 const buttonsContainer = document.getElementById("buttonsContainer");
@@ -116,11 +118,15 @@ const questionCounter = document.getElementById("question-counter");
 let currentIndex = 0;
 let score = 0;
 
+const savedScore = localStorage.getItem("score");
+if (savedScore !== null) {
+  score = parseInt(savedScore);
+}
+
 const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
   quizElement.textContent = actualQuestion.question;
   buttonsContainer.innerHTML = "";
-  countdown();
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
@@ -153,17 +159,16 @@ const answerChecking = function (chosenOption) {
   currentIndex++;
   counter.textContent = currentIndex + 1;
   if (currentIndex < questions.length) {
-    clearInterval(timer);
-    countdown();
+    getQuestion();
   } else {
     showResult();
   }
+  console.log(score);
 };
 
 getQuestion();
 
 const showResult = function () {
   window.open("results.html", "_self");
+  localStorage.setItem("score", score);
 };
-
-// PARTE RISULTATI
