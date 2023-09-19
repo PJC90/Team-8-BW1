@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  background-image: url("../assets/img/bg.jpg");
+  background-size: cover;
+  width: 100%;
+}
+
+#logo {
+  width: 12%;
+  margin-left: 4em;
+  margin-top: 2em;
+}
+
+.text{
+text-align: center;
+color: white;
+margin-top: 60px;
+}
+.text h3{
+font-size: 2em;
+font-weight: bold;
+margin-bottom:10px;
+
+}
+text.p{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#star{
+display: inline-block;
+margin: 1.5em;
+margin-left: 22em;
+}
+.star{
+mix-blend-mode: darken;
+}
+.star:hover{mix-blend-mode: normal;}
+
+.text2 p{
+color: white;
+padding-top: 40px;
+padding-left: 21em;
+margin-bottom: 1.8em;
+}
+
+.form{
+padding-left: 20em;
+margin-top: 10px;
+
+}
+.box{
+width: 55%;
+margin: 10px;
+height: 20px;
+background-color: rgb(0, 0, 0,0);
+color:white;
+border-color: transparent transparent fuchsia transparent;
+}
+
+#submit{
+display: inline;
+margin-left: 20%;
+margin-top: 1.8em;
+width: 180px;
+height: 50px;
+background-color: #00FFFF;
+font-size: 18px;
+font-weight: bolder;
+border: none;
+
+}
+
+#submit:hover{
+  box-shadow: 3px 5px 20px #00ffff86
+}
