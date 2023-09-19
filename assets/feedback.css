@@ -3,11 +3,13 @@
 body {
   font-family: "Outfit", sans-serif;
   font-size: 20px;
+  background-image: url("../assets/img/bg.jpg");
+  background-size: cover;
+  width: 100%;
 }
 .container{
   background-image: url("../assets/img/bg.jpg");
   background-size: cover;
-  height: 620px;
 }
 
 #logo {
@@ -24,18 +26,19 @@ margin-top: 60px;
 .text h3{
 font-size: 2em;
 font-weight: bold;
-margin-bottom:10px;
+margin-bottom:15px;
 
 }
-text.p{
+.text p{
 margin-top: 10px;
 margin-bottom: 10px;
 }
 
 #star{
 display: inline-block;
-margin: 1.5em;
-margin-left: 22em;
+margin-left: 450px;
+margin-right: 300px;
+margin-top: 10px;
 }
 .star{
 mix-blend-mode: darken;
@@ -45,37 +48,48 @@ mix-blend-mode: darken;
 .text2 p{
 color: white;
 padding-top: 40px;
-padding-left: 21em;
+text-align: center;
 margin-bottom: 1.8em;
 }
 
 .form{
-padding-left: 20em;
+text-align: center;
 margin-top: 10px;
+
 
 }
 .box{
-width: 55%;
-margin: 10px;
+width: 35%;
+margin: px;
 height: 20px;
 background-color: rgb(0, 0, 0,0);
 color:white;
 border-color: transparent transparent fuchsia transparent;
 }
 
-#submit{
-display: inline;
-margin-left: 20%;
-margin-top: 1.8em;
-width: 180px;
-height: 50px;
-background-color: #00FFFF;
-font-size: 18px;
-font-weight: bolder;
-border: none;
 
+
+.button-div{
+width: 100%;
+text-align: center;
+padding-left: 20px;
 }
 
-#submit:hover{
-  box-shadow: 3px 5px 20px #00ffff86
+
+.button-div button{ 
+width: 180px;
+margin-right: auto;
+margin-left: auto;
+margin-top: 45px;
+background-color: #00FFFF;
+height: 45px;
+text-align: center;
+font-weight: bolder;
+font-size: 18px;
+box-shadow:0px 0px 5px 5px #00FFFF;
+border-color: rgba(0, 0, 0, 0.156);
+}
+button a{
+text-decoration: none;
+color: black;
 }
