@@ -94,10 +94,23 @@ const questions = [
   },
 ];
 
+let timer;
+
+const countdown = function () {
+  let timeLeft = 60;
+  timer = setInterval(function () {
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+    } else {
+      document.getElementById("seconds").innerHTML = timeLeft;
+    }
+    timeLeft -= 1;
+  }, 1000);
+};
+
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
-const buttonsContainer = document.getElementById("options");
-
+const buttonsContainer = document.getElementById("buttonsContainer");
 const questionCounter = document.getElementById("question-counter");
 
 let currentIndex = 0;
@@ -105,7 +118,9 @@ let score = 0;
 
 const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
-  buttonsContainer.textContent = actualQuestion.question;
+  quizElement.textContent = actualQuestion.question;
+  buttonsContainer.innerHTML = "";
+  countdown();
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
@@ -139,23 +154,15 @@ const answerChecking = function (chosenOption) {
   counter.textContent = currentIndex + 1;
   if (currentIndex < questions.length) {
     getQuestion();
+    clearInterval(timer);
+    countdown();
   } else {
     showResult();
   }
 };
 
-const countdown = function () {
-  let timeLeft = 60;
-  let timer = setInterval(function () {
-    if (timeLeft <= 0) {
-      clearInterval(timer);
-    } else {
-      document.getElementById("seconds").innerText = timeLeft;
-    }
-    timeLeft -= 1;
-  }, 1000);
-};
-
-countdown();
-
 getQuestion();
+
+const showResult = function () {
+  window.open("results.html", "_self");
+};
