@@ -2,13 +2,12 @@
 
 body {
   font-family: "Outfit", sans-serif;
-}
-.container {
   background-image: url("../assets/img/bg.jpg");
   background-size: cover;
-  height: 1000px;
-
+  width: 100%;
 }
+
+
 #logo {
  width: 20%;
  padding-top: 60px;
@@ -39,11 +38,11 @@ p {
 }
 
 #rateus {
- display: block;
+ 
  margin: 0 auto;
  width: 100px;
- margin-top: 520px;
- padding-right: 100px;
+ margin-top: 170px;
+ padding-right: 130px;
  
 }
 button {
@@ -58,4 +57,9 @@ button {
 font-size: 20px;
 font-weight: 700;
 box-shadow: 0px 0px 15px 15px #20184d;
+}
+.TheContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 46px;
 }
