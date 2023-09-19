@@ -2,7 +2,7 @@ let data = {
   datasets: [
     {
       data: [score, questions.length - score],
-      backgroundColor: ["#00ffff", "#98689c"],
+      backgroundColor: ["#00ffff", "#C0128B"],
     },
   ],
 };
@@ -23,6 +23,8 @@ let myDonutChart = new Chart(ctx, {
       display: true,
       text: "Percentuale di Risposte Giuste su 10 Domande",
     },
+    cutout: "70%",
+    borderWidth: 0,
   },
 });
 
