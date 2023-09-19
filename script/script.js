@@ -94,9 +94,11 @@ const questions = [
   },
 ];
 
+let timer;
+
 const countdown = function () {
   let timeLeft = 60;
-  let timer = setInterval(function () {
+  timer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timer);
     } else {
@@ -105,8 +107,6 @@ const countdown = function () {
     timeLeft -= 1;
   }, 1000);
 };
-
-countdown();
 
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
@@ -120,6 +120,7 @@ const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
   quizElement.textContent = actualQuestion.question;
   buttonsContainer.innerHTML = "";
+  countdown();
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
@@ -152,10 +153,44 @@ const answerChecking = function (chosenOption) {
   currentIndex++;
   counter.textContent = currentIndex + 1;
   if (currentIndex < questions.length) {
-    getQuestion();
+    clearInterval(timer);
+    countdown();
   } else {
     showResult();
   }
 };
 
 getQuestion();
+
+const showResult = function () {
+  window.open("results.html", "_self");
+};
+
+// PARTE RISULTATI
+
+var data = {
+  labels: ["Risposte Giuste", "Risposte Sbagliate"],
+  datasets: [
+    {
+      data: [7, 3], // Cambia questi valori con le tue percentuali effettive
+      backgroundColor: ["green", "red"],
+    },
+  ],
+};
+
+var ctx = document.getElementById("myDonutChart").getContext("2d");
+
+var myDonutChart = new Chart(ctx, {
+  type: "doughnut",
+  data: data,
+  options: {
+    responsive: true,
+    legend: {
+      position: "bottom",
+    },
+    title: {
+      display: true,
+      text: "Percentuale di Risposte Giuste su 10 Domande",
+    },
+  },
+});

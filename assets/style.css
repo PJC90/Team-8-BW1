@@ -106,3 +106,26 @@ br {
   vertical-align: middle;
   line-height: 50px;
 }
+
+/* RESULTS PAGE CSS */
+
+#result-text-static {
+  color: white;
+  text-align: center;
+  line-height: 0.5;
+}
+
+#result-text-static h1 {
+  font-size: 2.8em;
+}
+
+#result-text-static p {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+}
+
+#answersDinamic {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 46px;
+}
