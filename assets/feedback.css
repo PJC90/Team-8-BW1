@@ -35,10 +35,8 @@ margin-bottom: 10px;
 }
 
 #star{
-display: inline-block;
-margin-left: 450px;
-margin-right: 300px;
-margin-top: 10px;
+text-align: center;
+margin-top: 50px;
 }
 .star{
 mix-blend-mode: darken;
