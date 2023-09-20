@@ -14,76 +14,71 @@ body {
   margin-top: 50px;
 }
 
-.text{
-text-align: center;
-color: white;
-margin-top: 60px;
+.text {
+  text-align: center;
+  color: white;
+  margin-top: 60px;
 }
-.text h3{
-font-size: 2em;
-font-weight: bold;
-margin-bottom:15px;
-
+.text h3 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
-.text p{
-margin-top: 10px;
-margin-bottom: 10px;
-}
-
-#star{
-text-align: center;
-margin-top: 50px;
-}
-.star{
-mix-blend-mode: darken;
-}
-.star:hover{mix-blend-mode: normal;}
-
-.text2 p{
-color: white;
-padding-top: 40px;
-text-align: center;
-margin-bottom: 1.8em;
+.text p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.form{
-text-align: center;
-margin-top: 10px;
-
-
+#star {
+  text-align: center;
+  margin-top: 50px;
 }
-.box{
-width: 35%;
-margin: px;
-height: 20px;
-background-color: rgb(0, 0, 0,0);
-color:white;
-border-color: transparent transparent fuchsia transparent;
+.star {
+  mix-blend-mode: darken;
+}
+.star:hover {
+  mix-blend-mode: normal;
 }
 
-
-
-.button-div{
-width: 100%;
-text-align: center;
-padding-left: 20px;
+.text2 p {
+  color: white;
+  padding-top: 40px;
+  text-align: center;
+  margin-bottom: 1.8em;
 }
 
-
-.button-div button{ 
-width: 180px;
-margin-right: auto;
-margin-left: auto;
-margin-top: 45px;
-background-color: #00FFFF;
-height: 45px;
-text-align: center;
-font-weight: bolder;
-font-size: 18px;
-box-shadow:0px 0px 5px 5px #00FFFF;
-border-color: rgba(0, 0, 0, 0.156);
+.form {
+  text-align: center;
+  margin-top: 10px;
 }
-button a{
-text-decoration: none;
-color: black;
+.box {
+  width: 35%;
+  margin: px;
+  height: 20px;
+  background-color: rgb(0, 0, 0, 0);
+  color: white;
+  border-color: transparent transparent fuchsia transparent;
+}
+
+.button-div {
+  width: 100%;
+  text-align: center;
+}
+
+.button-div button {
+  width: 180px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 45px;
+  background-color: #00ffff;
+  height: 45px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 18px;
+  box-shadow: 0px 0px 5px 5px #00ffff;
+  border-color: rgba(0, 0, 0, 0.156);
+}
+button a {
+  text-decoration: none;
+  color: black;
 }

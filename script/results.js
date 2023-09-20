@@ -1,3 +1,5 @@
+// DEFINIZIONE DELLA CHART DOUGHNUT
+
 let data = {
   datasets: [
     {
@@ -6,8 +8,6 @@ let data = {
     },
   ],
 };
-
-console.log(score);
 
 let ctx = document.getElementById("myDonutChart").getContext("2d");
 
@@ -29,6 +29,8 @@ let myDonutChart = new Chart(ctx, {
   },
 });
 
+// SCOPE DEI PUNTI IN CUI VERRANNP INSERITE LE PERCENTUALI IN BASE ALLE DOMANDE GIUSTE E SBAGLIATE
+
 const correctSections = document.getElementById("percentageCorrect");
 correctSections.innerText = (score / questions.length) * 100 + "%";
 
@@ -41,6 +43,8 @@ correctAnswers.innerText = score + "/10 questions";
 const wrongAnswers = document.getElementById("wrong-answers");
 wrongAnswers.innerText = questions.length - score + "/10 questions";
 
+// DEFINIZIONE DEL BOTTON "RATE" CHE AZZERA LO SCORE TRAMITE REMOVE ITEM, INOLTRE PORTA ALLA PAG. SUCCESSIVA
+
 const rateButton = document.getElementById("rate-button");
 rateButton.addEventListener("click", function () {
   localStorage.removeItem("score");
@@ -48,3 +52,22 @@ rateButton.addEventListener("click", function () {
 
   window.open("feedback.html", "_self");
 });
+
+// SCOPE DEGLI INNER CHE OSPITERANNO IL TESTO CENTRALE NELLA CHART IN BASE ALLA PERCENTUALE MAGGIORE DEL PUNTEGGIO
+
+const inner1 = document.getElementById("inner1");
+const inner2 = document.getElementById("inner2");
+const inner3 = document.getElementById("inner3");
+
+if (score > 5) {
+  inner1.innerText = "Congratulations!";
+  inner2.innerText = "You passed the exam";
+  inner2.style.color = "#00EBEB";
+  inner3.innerText =
+    "We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)";
+} else {
+  inner1.innerText = "Sorry";
+  inner2.innerText = "You didn't pass the exam!";
+  inner2.style.color = "#C2128D";
+  inner3.innerText = "You can try again next time, keep working hard!";
+}

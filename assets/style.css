@@ -115,11 +115,19 @@ br {
   line-height: 0.5;
 }
 
-#result-text-static h1 {
+#result-text-static h1,
+h2 {
   font-size: 2.8em;
 }
+h1:first-of-type {
+  font-weight: 900;
+}
 
-#result-text-static p {
+#result-text-static h1 {
+  font-weight: 300;
+}
+
+#result-text-static > p {
   font-size: 1.2em;
   letter-spacing: 1px;
 }
@@ -139,4 +147,46 @@ br {
   color: white;
   font-size: 1em;
   font-weight: 600;
+}
+
+#button-section {
+  margin-top: 50px;
+}
+
+#correct-section,
+#wrong-section {
+  margin-top: 50px;
+}
+
+#chart {
+  position: relative;
+  width: 20%;
+  word-wrap: break-word;
+  margin-top: 30px;
+}
+
+#inner1 {
+  position: absolute;
+
+  width: 130px;
+  left: 70px;
+  bottom: 160px;
+  font-size: 0.7em;
+}
+#inner2 {
+  position: absolute;
+  left: 60px;
+  bottom: 145px;
+  width: 153px;
+  font-size: 0.7em;
+}
+
+#inner3 {
+  position: absolute;
+  left: 70px;
+  width: 128px;
+  font-size: 0.6em;
+  line-height: 12px;
+  bottom: 70px;
+  font-weight: 200;
 }
