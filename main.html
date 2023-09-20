@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/reset.css" />
+    <link rel="stylesheet" href="assets/main.css" />
+    <title>Welcome page</title>
+  </head>
+  <body>
+    <div class="container">
+      <main id="main">
+        <img id="logo" src="assets/img/epicode_logo.png" alt="Epicode logo" />
+        <h1>Welcome to<br /><b>your exam</b></h1>
+        <h3>Instruction</h3>
+        <p>
+          We don't expect mot engineers to know the answer to all of these<br />
+          questions, so don't worry if you're unsure of a few of them.
+        </p>
+        <ul>
+          <li>
+            Each question is <b>timed</b> and can only be <b>answered once.</b>
+          </li>
+          <li>
+            Changing browswer tab or opening other windows will
+            <b>invalidate the question.</b>
+          </li>
+          <li>This exam will take approx <b>0-5 minutes.</b></li>
+        </ul>
+
+        <form id="checkbox">
+          <input type="checkbox" id="check" name="check" required />
+          <label for="check"
+            >I promise to answer myself without help from anyone</label
+          >
+          <button id="button">PROCEED</button>
+        </form>
+      </main>
+    </div>
+    <script src="script/main.js"></script>
+  </body>
+</html>
