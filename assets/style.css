@@ -119,6 +119,9 @@ br {
 h2 {
   font-size: 2.8em;
 }
+h1:first-of-type {
+  font-weight: 900;
+}
 
 #result-text-static h1 {
   font-weight: 300;
