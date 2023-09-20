@@ -61,7 +61,7 @@ body {
   margin-bottom: 15px;
 }
 #question-section button:hover {
-  background: linear-gradient(180deg, #b51289, #92017c);
+  background: linear-gradient(180deg, #cc0092, #8e007b);
 }
 
 #scoreOnGoing {
