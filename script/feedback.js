@@ -38,14 +38,14 @@ for (let i = 0; i < accendi.length; i++) {
 }
 
 const form = document.querySelector('#inviaForm')
+const formButton = document.getElementById('form-button')
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault()
+formButton.addEventListener('click', function () {
   const report = form.querySelector('.box')
   if (report.value.trim() === '') {
     // trim() verifica che non è una stringa vuota
     alert('Devi riempire il campo di testo')
   } else {
-    form.submit()
+    window.location.href = 'https://www.epicode.com/'
   }
 })
