@@ -48,3 +48,20 @@ rateButton.addEventListener("click", function () {
 
   window.open("feedback.html", "_self");
 });
+
+const inner1 = document.getElementById("inner1");
+const inner2 = document.getElementById("inner2");
+const inner3 = document.getElementById("inner3");
+
+if (score > 5) {
+  inner1.innerText = "Congratulations!";
+  inner2.innerText = "You passed the exam";
+  inner2.style.color = "#00EBEB";
+  inner3.innerText =
+    "We'll send you the certificate in few minutes. Check your email (including promotions/spam folder)";
+} else {
+  inner1.innerText = "Sorry";
+  inner2.innerText = "You didn't pass the exam!";
+  inner2.style.color = "#C2128D";
+  inner3.innerText = "You can try again next time, keep working hard!";
+}
