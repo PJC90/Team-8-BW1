@@ -163,7 +163,7 @@ h1:first-of-type {
 
 #chart {
   position: relative;
-  width: 22%;
+  width: 20%;
   word-wrap: break-word;
   margin-top: 30px;
 }
@@ -172,13 +172,13 @@ h1:first-of-type {
   position: absolute;
 
   width: 130px;
-  left: 60px;
+  left: 70px;
   bottom: 160px;
   font-size: 0.7em;
 }
 #inner2 {
   position: absolute;
-  left: 50px;
+  left: 60px;
   bottom: 145px;
   width: 153px;
   font-size: 0.7em;
@@ -186,8 +186,8 @@ h1:first-of-type {
 
 #inner3 {
   position: absolute;
-  left: 60px;
-  width: 125px;
+  left: 70px;
+  width: 128px;
   font-size: 0.6em;
   line-height: 12px;
   bottom: 70px;
