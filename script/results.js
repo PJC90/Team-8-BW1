@@ -46,5 +46,5 @@ rateButton.addEventListener("click", function () {
   localStorage.removeItem("score");
   score = 0;
 
-  window.location.href = ("feedback.html", "_self");
+  window.open("feedback.html", "_self");
 });
