@@ -7,15 +7,11 @@ body {
   background-size: cover;
   width: 100%;
 }
-.container{
-  background-image: url("../assets/img/bg.jpg");
-  background-size: cover;
-}
 
 #logo {
-  width: 12%;
-  margin-left: 4em;
-  margin-top: 2em;
+  width: 14%;
+  margin-left: 75px;
+  margin-top: 50px;
 }
 
 .text{
