@@ -49,3 +49,9 @@ form.addEventListener('submit', function (event) {
     form.submit()
   }
 })
+
+const formButton = document.getElementById("form-button");
+
+formButton.addEventListener("click", function () {
+  window.location.href = "https://www.epicode.com/";
+});
