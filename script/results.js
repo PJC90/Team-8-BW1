@@ -25,6 +25,7 @@ let myDonutChart = new Chart(ctx, {
     },
     cutout: "70%",
     borderWidth: 0,
+    elements: {},
   },
 });
 
