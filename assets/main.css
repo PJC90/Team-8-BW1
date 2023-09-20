@@ -51,6 +51,7 @@ ul {
 }
 
 #check{
+  position: relative;
   cursor: pointer;
   appearance: none;
   border: 1px solid white;
@@ -59,9 +60,10 @@ ul {
   margin: 3px 3px -2px 3px;
 }
 #check:checked::before{
+  position: absolute;
   content: "\2713";
-  width: 14px;
-  height: 16px;
+  bottom: -1px;
+ left: 1px;
   color: white;
   background-color: transparent;
   border-top: none;

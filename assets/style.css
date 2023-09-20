@@ -154,35 +154,35 @@ h1:first-of-type {
 }
 
 #chart {
-  position: absolute;
+  position: relative;
   width: 20%;
   word-wrap: break-word;
+  margin-top: 30px;
 }
 
 #inner1 {
-  display: inline-block;
+  position: absolute;
+
   width: 130px;
-  position: relative;
-  bottom: 180px;
+  left: 70px;
+  bottom: 160px;
   font-size: 0.7em;
 }
 #inner2 {
-  display: inline-block;
-
-  position: relative;
-  bottom: 210px;
+  position: absolute;
+  left: 60px;
+  bottom: 145px;
   width: 153px;
   font-size: 0.7em;
 }
 
 #inner3 {
-  position: relative;
-
-  display: inline-block;
-  width: 125px;
+  position: absolute;
+  left: 70px;
+  width: 128px;
   font-size: 0.6em;
   line-height: 12px;
-  bottom: 220px;
+  bottom: 70px;
   font-weight: 200;
 }
 
