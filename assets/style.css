@@ -150,7 +150,12 @@ h1:first-of-type {
 }
 
 #button-section {
-  margin-top: 100px;
+  margin-top: 50px;
+}
+
+#correct-section,
+#wrong-section {
+  margin-top: 50px;
 }
 
 #chart {
@@ -184,15 +189,4 @@ h1:first-of-type {
   line-height: 12px;
   bottom: 70px;
   font-weight: 200;
-}
-
-#correct-section {
-  margin-top: 50px;
-  margin-right: 180px;
-}
-
-#wrong-section {
-  margin-top: 50px;
-
-  margin-left: 180px;
 }

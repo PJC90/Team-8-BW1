@@ -1,3 +1,5 @@
+// DEFINIZIONE DELLA FUNZIONE CHE ACCENDE LE STELLINE NELLA PAG.FEEDBACK
+
 const accendi = document.querySelectorAll(".star");
 let selectedStars = 0;
 
@@ -15,6 +17,8 @@ for (let i = 0; i < accendi.length; i++) {
   });
 }
 
+// AGGIUNTO PREVENT DEFAULT AL FORM
+
 const form = document.querySelector("#inviaForm");
 
 form.addEventListener("submit", function (event) {
@@ -27,6 +31,8 @@ form.addEventListener("submit", function (event) {
     form.submit();
   }
 });
+
+// AGGIUNTO LINK ESTERNO AL BOTTONE FINALE
 
 const formButton = document.getElementById("form-button");
 
