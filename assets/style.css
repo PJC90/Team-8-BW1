@@ -153,10 +153,7 @@ h1:first-of-type {
   margin-top: 50px;
 }
 
-#correct-section {
-  margin-top: 50px;
-}
-
+#correct-section,
 #wrong-section {
   margin-top: 50px;
 }
