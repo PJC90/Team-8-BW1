@@ -7,8 +7,6 @@ let data = {
   ],
 };
 
-console.log(score);
-
 let ctx = document.getElementById("myDonutChart").getContext("2d");
 
 let myDonutChart = new Chart(ctx, {

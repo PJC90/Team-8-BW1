@@ -94,6 +94,8 @@ const questions = [
   },
 ];
 
+// GENERAZIONE TIMER
+
 let timer;
 
 const countdown = function (n) {
@@ -109,6 +111,8 @@ const countdown = function (n) {
 };
 
 countdown(60);
+
+// SEZIONE DOMANDE E SCORE
 
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
