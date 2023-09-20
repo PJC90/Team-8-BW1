@@ -112,7 +112,7 @@ const countdown = function (n) {
 
 countdown(60);
 
-// SEZIONE DOMANDE E SCORE
+// SEZIONE SCORE
 
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");
@@ -124,8 +124,10 @@ let score = 0;
 
 const savedScore = localStorage.getItem("score");
 if (savedScore !== null) {
-  score = parseInt(savedScore);
+  score = parseInt(savedScore); //SI REGISTRA LO SCORE IN LOCALE CON GETITEM
 }
+
+// CREAZIONE DOMANDE E ELEMENTI BUTTON
 
 const getQuestion = function () {
   const actualQuestion = questions[currentIndex];
@@ -152,8 +154,13 @@ const getQuestion = function () {
     buttonsContainer.appendChild(buttonFalse);
   }
 };
+
+// CREAZIONE COUNTER DELLE DOMANDE CHE DINAMICAMENTE CAMBIA IN BASE ALL'INDICE DELLA DOMANDA
+
 const counter = document.getElementById("question-counter");
 counter.textContent = 1;
+
+// FUNZIONE CHE FA UN CHECK DI TRUTHY OR FALSY SULLA DOMANDA
 
 const answerChecking = function (chosenOption) {
   const actualQuestion = questions[currentIndex];
@@ -164,22 +171,24 @@ const answerChecking = function (chosenOption) {
   counter.textContent = currentIndex + 1;
   if (currentIndex < questions.length) {
     getQuestion();
-    startAnimation();
+    startAnimation(); // DOPO OGNI DOMANDA RIPARE TIL TIMER E L'ANIMAZIONE DEL TIMER
     clearInterval(timer);
     countdown(60);
   } else {
     showResult();
   }
-  console.log(score);
 };
 
 getQuestion();
+
+//SI SALVA LO SCORE IN LOCALE CON SET ITEM
 
 const showResult = function () {
   window.open("results.html", "_self");
   localStorage.setItem("score", score);
 };
 
+//FUNZIONE CHE RIATTIVA ANIMAZIONE DEL TIIMER
 const startAnimation = function () {
   const animationCircle = document.getElementById("animationCircle");
   animationCircle.beginElement();
