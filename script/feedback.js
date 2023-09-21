@@ -17,23 +17,9 @@ for (let i = 0; i < accendi.length; i++) {
   });
 }
 
-// AGGIUNTO PREVENT DEFAULT AL FORM
-
-const form = document.querySelector("#inviaForm");
-
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const report = form.querySelector(".box");
-  if (report.value.trim() === "") {
-    // trim() verifica che non è una stringa vuota
-    alert("Devi riempire il campo di testo");
-  } else {
-    form.submit();
-  }
-});
-
 // AGGIUNTO LINK ESTERNO AL BOTTONE FINALE
 
+const form = document.querySelector("#inviaForm");
 const formButton = document.getElementById("form-button");
 
 formButton.addEventListener("click", function () {
