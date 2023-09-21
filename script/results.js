@@ -3,7 +3,7 @@
 let data = {
   datasets: [
     {
-      data: [score, questions.length - score],
+      data: [score, 10 - score],
       backgroundColor: ["#00ffff", "#C0128B"],
     },
   ],
@@ -32,16 +32,16 @@ let myDonutChart = new Chart(ctx, {
 // SCOPE DEI PUNTI IN CUI VERRANNO INSERITE LE PERCENTUALI IN BASE ALLE DOMANDE GIUSTE E SBAGLIATE
 
 const correctSections = document.getElementById("percentageCorrect");
-correctSections.innerText = (score / questions.length) * 100 + "%";
+correctSections.innerText = (score / 10) * 100 + "%";
 
 const wrongSection = document.getElementById("percentageWrong");
-wrongSection.innerText = (questions.length - score) * 10 + "%";
+wrongSection.innerText = (10 - score) * 10 + "%";
 
 const correctAnswers = document.getElementById("correct-answers");
 correctAnswers.innerText = score + "/10 questions";
 
 const wrongAnswers = document.getElementById("wrong-answers");
-wrongAnswers.innerText = questions.length - score + "/10 questions";
+wrongAnswers.innerText = 10 - score + "/10 questions";
 
 // DEFINIZIONE DEL BOTTON "RATE" CHE AZZERA LO SCORE TRAMITE REMOVE ITEM, INOLTRE PORTA ALLA PAG. SUCCESSIVA
 

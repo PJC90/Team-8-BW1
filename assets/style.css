@@ -148,8 +148,8 @@ h1:first-of-type {
   font-size: 1em;
   font-weight: 600;
 }
-#rate-button:hover{
-  box-shadow: 0px 0px 10px 2px #00FFFF;
+#rate-button:hover {
+  box-shadow: 0px 0px 10px 2px #00ffff;
 }
 #button-section {
   margin-top: 50px;
