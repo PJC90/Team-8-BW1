@@ -1,4 +1,4 @@
-const questions = [
+const questionsEasy = [
   {
     category: "Science: Computers",
     type: "multiple",
@@ -94,6 +94,95 @@ const questions = [
   },
 ];
 
+const questionsMedium = [
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "medium",
+    question: "FLAC stands for &quot;Free Lossless Audio Condenser&quot;&#039;",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What five letter word is the motto of the IBM Computer company?",
+    correct_answer: "Think",
+    incorrect_answers: ["Click", "Logic", "Pixel"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Nvidia's headquarters are based in which Silicon Valley city?",
+    correct_answer: "Santa Clara",
+    incorrect_answers: ["Palo Alto", "Cupertino", "Mountain View"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "What was the name given to Android 4.3?",
+    correct_answer: "Jelly Bean",
+    incorrect_answers: ["Lollipop", "Nutella", "Froyo"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "medium",
+    question:
+      "To bypass US Munitions Export Laws, the creator of the PGP published all the source code in book form. ",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question: "Generally, which component of a computer draws the most power?",
+    correct_answer: "Video Card",
+    incorrect_answers: ["Hard Drive", "Processor", "Power Supply"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question:
+      "What is the correct term for the metal object in between the CPU and the CPU fan within a computer system?",
+    correct_answer: "Heat Sink",
+    incorrect_answers: ["CPU Vent", "Temperature Decipator", "Heat Vent"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "medium",
+    question:
+      "In programming, the ternary operator is mostly defined with what symbol(s)?",
+    correct_answer: "?:",
+    incorrect_answers: ["??", "if then", "?"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "medium",
+    question:
+      "Early RAM was directly seated onto the motherboard and could not be easily removed.",
+    correct_answer: "True",
+    incorrect_answers: ["False"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "medium",
+    question:
+      "The last Windows operating system to be based on the Windows 9x kernel was Windows 98.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+];
+
 // GENERAZIONE TIMER
 
 let timer;
@@ -127,10 +216,15 @@ if (savedScore !== null) {
   score = parseInt(savedScore); //SI REGISTRA LO SCORE IN LOCALE CON GETITEM
 }
 
+const chosenDifficulty = localStorage.getItem("difficulty");
+if (chosenDifficulty !== null) {
+  difficulty = parseInt(chosenDifficulty);
+}
+
 // CREAZIONE DOMANDE E ELEMENTI BUTTON
 
-const getQuestion = function () {
-  const actualQuestion = questions[currentIndex];
+const getQuestion = function (arraySelected) {
+  const actualQuestion = arraySelected[currentIndex];
   quizElement.textContent = actualQuestion.question;
   buttonsContainer.innerHTML = "";
 
@@ -139,21 +233,35 @@ const getQuestion = function () {
     actualQuestion.incorrect_answers.forEach((opt) => {
       const buttons = document.createElement("button");
       buttons.textContent = opt;
-      buttons.addEventListener("click", () => answerChecking(opt));
+      buttons.addEventListener("click", () =>
+        answerChecking(opt, arraySelected)
+      );
       buttonsContainer.appendChild(buttons);
     });
   } else if (actualQuestion.type === "boolean") {
     const buttonTrue = document.createElement("button");
     buttonTrue.textContent = "True";
-    buttonTrue.addEventListener("click", () => answerChecking("True"));
+    buttonTrue.addEventListener("click", () =>
+      answerChecking("True", arraySelected)
+    );
     buttonsContainer.appendChild(buttonTrue);
 
     const buttonFalse = document.createElement("button");
     buttonFalse.textContent = "False";
-    buttonFalse.addEventListener("click", () => answerChecking("False"));
+    buttonFalse.addEventListener("click", () =>
+      answerChecking("False", arraySelected)
+    );
     buttonsContainer.appendChild(buttonFalse);
   }
 };
+
+if (difficulty === 1) {
+  getQuestion(questionsEasy);
+} else {
+  getQuestion(questionsMedium);
+}
+
+console.log(score);
 
 // CREAZIONE COUNTER DELLE DOMANDE CHE DINAMICAMENTE CAMBIA IN BASE ALL'INDICE DELLA DOMANDA
 
@@ -162,15 +270,15 @@ counter.textContent = 1;
 
 // FUNZIONE CHE FA UN CHECK DI TRUTHY OR FALSY SULLA DOMANDA
 
-const answerChecking = function (chosenOption) {
-  const actualQuestion = questions[currentIndex];
+const answerChecking = function (chosenOption, arraySelected) {
+  const actualQuestion = arraySelected[currentIndex];
   if (chosenOption === actualQuestion.correct_answer) {
     score++;
   }
   currentIndex++;
   counter.textContent = currentIndex + 1;
-  if (currentIndex < questions.length) {
-    getQuestion();
+  if (currentIndex < arraySelected.length) {
+    getQuestion(arraySelected);
     startAnimation(); // DOPO OGNI DOMANDA RIPARE TIL TIMER E L'ANIMAZIONE DEL TIMER
     clearInterval(timer);
     countdown(60);
@@ -178,8 +286,6 @@ const answerChecking = function (chosenOption) {
     showResult();
   }
 };
-
-getQuestion();
 
 //SI SALVA LO SCORE IN LOCALE CON SET ITEM
 
