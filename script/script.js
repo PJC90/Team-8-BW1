@@ -183,6 +183,102 @@ const questionsMedium = [
   },
 ];
 
+const questionsHard = [
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question:
+      "What was the name of the security vulnerability found in Bash in 2014?",
+    correct_answer: "Shellshock",
+    incorrect_answers: ["Heartbleed", "Bashbug", "Stagefright"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "How many Hz does the video standard PAL support?",
+    correct_answer: "50",
+    incorrect_answers: ["59", "60", "25"],
+  },
+  {
+    category: "Science: Computers",
+    type: "boolean",
+    difficulty: "hard",
+    question: "DHCP stands for Dynamic Host Configuration Port.",
+    correct_answer: "False",
+    incorrect_answers: ["True"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question:
+      "Dutch computer scientist Mark Overmars is known for creating which game development engine?",
+    correct_answer: "Game Maker",
+    incorrect_answers: ["Stencyl", "Construct", "Torque 2D"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question:
+      "What is the name given to layer 4 of the Open Systems Interconnection (ISO) model?",
+    correct_answer: "Transport",
+    incorrect_answers: ["Session", "Data link", "Network"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What vulnerability ranked #1 on the OWASP Top 10 in 2013?",
+    correct_answer: "Injection ",
+    incorrect_answers: [
+      "Broken Authentication",
+      "Cross-Site Scripting",
+      "Insecure Direct Object References",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "Who invented the &quot;Spanning Tree Protocol&quot;?",
+    correct_answer: "Radia Perlman",
+    incorrect_answers: ["Paul Vixie", "Vint Cerf", "Michael Roberts"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question:
+      "Which of these is not a layer in the OSI model for data communications?",
+    correct_answer: "Connection Layer",
+    incorrect_answers: [
+      "Application Layer",
+      "Transport Layer",
+      "Physical Layer",
+    ],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question: "What was the name of the first Bulgarian personal computer?",
+    correct_answer: "IMKO-1",
+    incorrect_answers: ["Pravetz 82", "Pravetz 8D", "IZOT 1030"],
+  },
+  {
+    category: "Science: Computers",
+    type: "multiple",
+    difficulty: "hard",
+    question:
+      "Lenovo acquired IBM&#039;s personal computer division, including the ThinkPad line of laptops and tablets, in what year?",
+    correct_answer: "2005",
+    incorrect_answers: ["1999", "2002", "2008"],
+  },
+];
+
 // GENERAZIONE TIMER
 
 let timer;
@@ -257,8 +353,10 @@ const getQuestion = function (arraySelected) {
 
 if (difficulty === 1) {
   getQuestion(questionsEasy);
-} else {
+} else if (difficulty === 2) {
   getQuestion(questionsMedium);
+} else {
+  getQuestion(questionsHard);
 }
 
 console.log(score);
