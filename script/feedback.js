@@ -17,21 +17,17 @@ for (let i = 0; i < accendi.length; i++) {
   });
 }
 
-// AGGIUNTO PREVENT DEFAULT AL FORM
-
-
-
 // AGGIUNTO LINK ESTERNO AL BOTTONE FINALE
 
-const form = document.querySelector('#inviaForm')
-const formButton = document.getElementById('form-button')
+const form = document.querySelector("#inviaForm");
+const formButton = document.getElementById("form-button");
 
-formButton.addEventListener('click', function () {
-  const report = form.querySelector('.box')
-  if (report.value.trim() === '') {
+formButton.addEventListener("click", function () {
+  const report = form.querySelector(".box");
+  if (report.value.trim() === "") {
     // trim() verifica che non è una stringa vuota
-    alert('Devi riempire il campo di testo')
+    alert("Devi riempire il campo di testo");
   } else {
-    window.location.href = 'https://www.epicode.com/'
+    window.location.href = "https://www.epicode.com/";
   }
-})
+});
