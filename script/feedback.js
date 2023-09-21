@@ -37,5 +37,11 @@ form.addEventListener("submit", function (event) {
 const formButton = document.getElementById("form-button");
 
 formButton.addEventListener("click", function () {
-  window.location.href = "https://www.epicode.com";
+  const report = form.querySelector(".box");
+  if (report.value.trim() === "") {
+    // trim() verifica che non è una stringa vuota
+    alert("Devi riempire il campo di testo");
+  } else {
+    window.location.href = "https://www.epicode.com/";
+  }
 });
