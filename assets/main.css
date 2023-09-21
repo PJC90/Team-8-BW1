@@ -16,8 +16,7 @@ body {
 #logo {
   width: 100px;
   margin-bottom: 4em;
-  margin-top: 35px;
-  margin-left: 9px;
+  margin-top: 2em;
 }
 h1{
   color: white;
@@ -64,7 +63,7 @@ ul {
   position: absolute;
   content: "\2713";
   bottom: -1px;
-  left: 1.8px;
+ left: 1.8px;
   color: white;
   background-color: transparent;
   border-top: none;
