@@ -112,7 +112,7 @@ const countdown = function (n) {
 
 countdown(60);
 
-// SEZIONE SCORE
+// SEZIONE SCORE E SCOPE DEI VARI ELEMENTI
 
 const quizSection = document.getElementById("question-section");
 const quizElement = document.getElementById("question");

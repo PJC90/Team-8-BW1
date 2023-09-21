@@ -29,7 +29,7 @@ let myDonutChart = new Chart(ctx, {
   },
 });
 
-// SCOPE DEI PUNTI IN CUI VERRANNP INSERITE LE PERCENTUALI IN BASE ALLE DOMANDE GIUSTE E SBAGLIATE
+// SCOPE DEI PUNTI IN CUI VERRANNO INSERITE LE PERCENTUALI IN BASE ALLE DOMANDE GIUSTE E SBAGLIATE
 
 const correctSections = document.getElementById("percentageCorrect");
 correctSections.innerText = (score / questions.length) * 100 + "%";
