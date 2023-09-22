@@ -7,7 +7,7 @@ const proceedBtn = document
   .getElementById("button")
   .addEventListener("click", function () {
     document.querySelector(".container").style.animation =
-      "fadeOut 1s ease-in-out forwards";
+      "fadeOut 0.5s ease-in-out forwards";
 
     setTimeout(function () {
       window.location.href = "main2.html";
