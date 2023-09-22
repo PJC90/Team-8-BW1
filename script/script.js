@@ -99,7 +99,7 @@ const questionsMedium = [
     category: "Science: Computers",
     type: "boolean",
     difficulty: "medium",
-    question: "FLAC stands for &quot;Free Lossless Audio Condenser&quot;&#039;",
+    question: "FLAC stands for 'Free Lossless Audio Condenser'",
     correct_answer: "False",
     incorrect_answers: ["True"],
   },
@@ -243,7 +243,7 @@ const questionsHard = [
     category: "Science: Computers",
     type: "multiple",
     difficulty: "hard",
-    question: "Who invented the &quot;Spanning Tree Protocol&quot;?",
+    question: "Who invented the 'Spanning Tree Protocol?'",
     correct_answer: "Radia Perlman",
     incorrect_answers: ["Paul Vixie", "Vint Cerf", "Michael Roberts"],
   },
@@ -273,7 +273,7 @@ const questionsHard = [
     type: "multiple",
     difficulty: "hard",
     question:
-      "Lenovo acquired IBM&#039;s personal computer division, including the ThinkPad line of laptops and tablets, in what year?",
+      "Lenovo acquired IBM's personal computer division, including the ThinkPad line of laptops and tablets, in what year?",
     correct_answer: "2005",
     incorrect_answers: ["1999", "2002", "2008"],
   },
@@ -326,6 +326,7 @@ const getQuestion = function (arraySelected) {
 
   if (actualQuestion.type === "multiple") {
     actualQuestion.incorrect_answers.push(actualQuestion.correct_answer);
+
     actualQuestion.incorrect_answers.forEach((opt) => {
       const buttons = document.createElement("button");
       buttons.textContent = opt;
@@ -359,8 +360,6 @@ if (difficulty === 1) {
   getQuestion(questionsHard);
 }
 
-console.log(score);
-
 // CREAZIONE COUNTER DELLE DOMANDE CHE DINAMICAMENTE CAMBIA IN BASE ALL'INDICE DELLA DOMANDA
 
 const counter = document.getElementById("question-counter");
@@ -377,7 +376,7 @@ const answerChecking = function (chosenOption, arraySelected) {
   counter.textContent = currentIndex + 1;
   if (currentIndex < arraySelected.length) {
     getQuestion(arraySelected);
-    startAnimation(); // DOPO OGNI DOMANDA RIPARE TIL TIMER E L'ANIMAZIONE DEL TIMER
+    startAnimation(); // DOPO OGNI DOMANDA RIPARTE IL TIMER E L'ANIMAZIONE DEL TIMER
     clearInterval(timer);
     countdown(60);
   } else {

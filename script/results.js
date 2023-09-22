@@ -50,7 +50,12 @@ rateButton.addEventListener("click", function () {
   localStorage.removeItem("score");
   score = 0;
 
-  window.open("feedback.html", "_self");
+  document.querySelector("main").style.animation =
+    "fadeOut 1s ease-in-out forwards";
+
+  setTimeout(function () {
+    window.location.href = "feedback.html";
+  }, 1000);
 });
 
 // SCOPE DEGLI INNER CHE OSPITERANNO IL TESTO CENTRALE NELLA CHART IN BASE ALLA PERCENTUALE MAGGIORE DEL PUNTEGGIO

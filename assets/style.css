@@ -192,3 +192,12 @@ h1:first-of-type {
   bottom: 70px;
   font-weight: 200;
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
