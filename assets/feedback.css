@@ -32,6 +32,7 @@ body {
 #star {
   text-align: center;
   margin-top: 50px;
+  cursor: pointer;
 }
 .star {
   mix-blend-mode: darken;
@@ -75,7 +76,7 @@ body {
   text-align: center;
   font-weight: bolder;
   font-size: 18px;
-  
+  cursor: pointer;
   border-color: transparent;
 }
 .button-div button:hover{
