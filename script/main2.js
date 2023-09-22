@@ -7,19 +7,34 @@ const hardButton = document.getElementById("hard");
 easyButton.addEventListener("click", function () {
   difficulty = 1;
   saveDifficultLevel();
-  window.open("quiz.html", "_self");
+  document.querySelector(".container").style.animation =
+    "fadeOut 1s ease-in-out forwards";
+
+  setTimeout(function () {
+    window.location.href = "quiz.html";
+  }, 1000);
 });
 
 mediumButton.addEventListener("click", function () {
   difficulty = 2;
   saveDifficultLevel();
-  window.open("quiz.html", "_self");
+  document.querySelector(".container").style.animation =
+    "fadeOut 1s ease-in-out forwards";
+
+  setTimeout(function () {
+    window.location.href = "quiz.html";
+  }, 1000);
 });
 
 hardButton.addEventListener("click", function () {
   difficulty = 3;
   saveDifficultLevel();
-  window.open("quiz.html", "_self");
+  document.querySelector(".container").style.animation =
+    "fadeOut 1s ease-in-out forwards";
+
+  setTimeout(function () {
+    window.location.href = "quiz.html";
+  }, 1000);
 });
 
 const saveDifficultLevel = function () {
